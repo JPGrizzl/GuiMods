@@ -60,7 +60,7 @@ Tile {
             {
                 id: lightSlider
                 orientation: Qt.Vertical
-                height: 120
+                height: root.height - 80
                 width: 20
                 minimumValue: 0
                 maximumValue: 100

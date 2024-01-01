@@ -3,6 +3,7 @@
 import QtQuick 1.1
 import com.victron.velib 1.0
 import "utils.js" as Utils
+import "tanksensor.js" as TankSensor
 
 OverviewPage
 {
@@ -67,19 +68,13 @@ OverviewPage
         width: listWidth
         height: listHeight
         orientation: ListView.Horizontal
-        visible: numberOfLightsShown > 0
+        visible: true
         interactive: false
-
         model: lightsModel
         delegate: TileLights
         {
             width: tileWidth
             height: root.height - 40
-            Connections
-            {
-                target: marqueeTimer
-                onTriggered: doScroll()
-            }
         }
     }
 
