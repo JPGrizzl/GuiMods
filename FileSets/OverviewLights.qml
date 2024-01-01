@@ -10,7 +10,7 @@ OverviewPage
 	id: root
 
     property int lightsWidth: 0
-    property int maxLights: 2
+    property int maxLights: 4
     property int numberOfLightsShown: 0
     property int horizontalMargin: 8
     property int tileWidth: (root.width - (horizontalMargin * 2)) / root.maxLights

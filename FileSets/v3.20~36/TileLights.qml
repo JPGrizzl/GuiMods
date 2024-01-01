@@ -10,6 +10,8 @@ Tile {
 
     color: "#d9d9d9"
 
+    property int lightIp: (lightNumber === 0 || lightNumber === 1) ? 91 : (lightNumber === 2 || lightNumber === 3) ? 71 : 0
+
 	values: Item
     {
         Column
@@ -41,12 +43,12 @@ Tile {
                 id: onButton
                 baseColor: "green"
                 pressedColor: "#979797"
-                height: 40
+                height: 30
                 width: parent.width - 6
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24.91/white/" + (lightNumber + 3));
+                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + (lightNumber + 2));
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=on&brightness=100");
                 }
@@ -58,15 +60,95 @@ Tile {
             }
             Button
             {
-                id: offButton
-                baseColor: "red"
+                id: eightyButton
+                baseColor: "#b2b2b2"
                 pressedColor: "#979797"
-                height: 40
+                height: 30
                 width: parent.width - 6
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24.91/white/" + (lightNumber + 3));
+                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + (lightNumber + 2));
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.send("turn=on&brightness=80");
+                }
+                content: TileText
+                {
+                    text: "80%"; font.bold: true;
+                    color: "black"
+                }
+            }
+            Button
+            {
+                id: fortyButton
+                baseColor: "#7f7f7f"
+                pressedColor: "#979797"
+                height: 30
+                width: parent.width - 6
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + (lightNumber + 2));
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.send("turn=on&brightness=40");
+                }
+                content: TileText
+                {
+                    text: "40%"; font.bold: true;
+                    color: "black"
+                }
+            }
+            Button
+            {
+                id: twentyButton
+                baseColor: "#4c4c4c"
+                pressedColor: "#979797"
+                height: 30
+                width: parent.width - 6
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + (lightNumber + 2));
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.send("turn=on&brightness=20");
+                }
+                content: TileText
+                {
+                    text: "20%"; font.bold: true;
+                    color: "black"
+                }
+            }
+            Button
+            {
+                id: oneButton
+                baseColor: "#191919"
+                pressedColor: "#979797"
+                height: 30
+                width: parent.width - 6
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + (lightNumber + 2));
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.send("turn=on&brightness=1");
+                }
+                content: TileText
+                {
+                    text: "1%"; font.bold: true;
+                    color: "#b2b2b2"
+                }
+            }
+            Button
+            {
+                id: offButton
+                baseColor: "red"
+                pressedColor: "#979797"
+                height: 30
+                width: parent.width - 6
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + (lightNumber + 2));
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=off");
                 }
