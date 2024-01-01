@@ -104,7 +104,7 @@ if [ $scriptAction == 'INSTALL' ] ; then
                 {"path":"/GuiMods/ShowTileOverview", "default":1, "min":0, "max":1}, \
                 {"path":"/GuiMods/MoveSettings", "default":1, "min":0, "max":1}, \
                 {"path":"/GuiMods/ShowRelayOverview", "default":1, "min":0, "max":1}, \
-                {"path":"/GuiMods/ShowLightsOverview", "default":0, "min":0, "max":1}, \                
+                {"path":"/GuiMods/ShowLightsOverview", "default":1, "min":0, "max":1}, \                
                 {"path":"/GuiMods/ShowInactiveFlowTiles", "default":0}, \
                 {"path":"/GuiMods/ShowTanksTempsDigIn", "default":0, "min":0, "max":1}, \
                 {"path":"/GuiMods/FlowOverview", "default":1, "min":0, "max":3}, \

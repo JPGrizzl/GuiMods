@@ -9,6 +9,7 @@
 /opt/victronenergy/gui/qml/PageSettingsRelay.qml
 /opt/victronenergy/gui/qml/PageSettingsGuiMods.qml
 /opt/victronenergy/gui/qml/TileRelay.qml
+/opt/victronenergy/gui/qml/TileLights.qml
 /opt/victronenergy/gui/qml/OverviewTanksTempsDigInputs.qml
 /opt/victronenergy/dbus-systemcalc-py/dbus_systemcalc.py
 /opt/victronenergy/gui/qml/OverviewFlowComplex.qml

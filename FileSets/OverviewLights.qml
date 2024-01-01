@@ -40,7 +40,7 @@ OverviewPage
         color: "#b3b3b3"
     }
 
-    ListModel { id: Model lightsModel}
+    ListModel { id: lightsModel}
 
     Text
     {
@@ -85,11 +85,11 @@ OverviewPage
 
     function updateLights ()
     {
-        numberOfRelaysShown = 0
+        numberOfLightsShown = 0
         lightsModel.clear()
-        for (var i = 0; i < maxRelays; i++)
+        for (var i = 0; i < maxLights; i++)
         {
-            numberOfRelaysShown++ // increment before append so ListView centers properly
+            numberOfLightsShown++ // increment before append so ListView centers properly
             lightsModel.append ({lightNumber: i})
         }
     }
