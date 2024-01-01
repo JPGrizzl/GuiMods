@@ -130,7 +130,7 @@ Tile {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + (lightNumber + 2));
+                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + lightApiPath);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=on&brightness=1");
                 }
@@ -150,7 +150,7 @@ Tile {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + (lightNumber + 2));
+                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + lightApiPath);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=off");
                 }
