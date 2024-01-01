@@ -48,27 +48,12 @@ Tile {
                     var xhr = new XMLHttpRequest();
                     xhr.open("POST", "http://172.24.24.91/white/" + (lightNumber + 3));
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    xhr.send("turn=on");
+                    xhr.send("turn=on&brightness=100");
                 }
                 content: TileText
                 {
                     text: "I"; font.bold: true;
                     color: "black"
-                }
-            }
-            Slider
-            {
-                id: lightSlider
-                orientation: Qt.Vertical
-                height: root.height - 80
-                width: 20
-                minimumValue: 0
-                maximumValue: 100
-                onValueChanged: {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24.91/white/" + (lightNumber + 3));
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    xhr.send("turn=on&brightness=" + Math.round(value));
                 }
             }
             Button
