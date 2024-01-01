@@ -39,6 +39,14 @@ MbPage {
             name: qsTr ("Show Relay overview")
             writeAccessLevel: User.AccessUser
         }
+
+        MbSwitch {
+            id: lightsOverview
+            bind: Utils.path (bindPrefixGuiMods, "/ShowLightsOverview")
+            name: qsTr ("Show Lights overview")
+            writeAccessLevel: User.AccessUser
+        }
+        
         MbSwitch {
             id: tanksTempsOverview
             bind: Utils.path (bindPrefixGuiMods, "/ShowTanksTempsDigIn")

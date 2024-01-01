@@ -104,6 +104,7 @@ if [ $scriptAction == 'INSTALL' ] ; then
                 {"path":"/GuiMods/ShowTileOverview", "default":1, "min":0, "max":1}, \
                 {"path":"/GuiMods/MoveSettings", "default":1, "min":0, "max":1}, \
                 {"path":"/GuiMods/ShowRelayOverview", "default":1, "min":0, "max":1}, \
+                {"path":"/GuiMods/ShowLightsOverview", "default":0, "min":0, "max":1}, \                
                 {"path":"/GuiMods/ShowInactiveFlowTiles", "default":0}, \
                 {"path":"/GuiMods/ShowTanksTempsDigIn", "default":0, "min":0, "max":1}, \
                 {"path":"/GuiMods/FlowOverview", "default":1, "min":0, "max":3}, \
@@ -274,6 +275,7 @@ if [ $scriptAction == 'INSTALL' ] ; then
     updateActiveFile "$qmlDir/Tile.qml"
     updateActiveFile "$qmlDir/PageSettingsRelay.qml"
     updateActiveFile "$qmlDir/OverviewRelays.qml"
+    updateActiveFile "$qmlDir/OverviewLights.qml"
     updateActiveFile "$qmlDir/TileRelay.qml"
     updateActiveFile "$qmlDir/DetailInverter.qml"
     updateActiveFile "$qmlDir/DetailAcInput.qml"
@@ -389,6 +391,7 @@ if [ $scriptAction == 'UNINSTALL' ] ; then
     restoreActiveFile "$qmlDir/Tile.qml"
     restoreActiveFile "$qmlDir/PageSettingsRelay.qml"
     restoreActiveFile "$qmlDir/OverviewRelays.qml"
+    restoreActiveFile "$qmlDir/OverviewLights.qml"
     restoreActiveFile "$qmlDir/TileRelay.qml"
     restoreActiveFile "$qmlDir/DetailInverter.qml"
     restoreActiveFile "$qmlDir/DetailAcInput.qml"

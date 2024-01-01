@@ -220,6 +220,13 @@ PageStackWindow {
         onValueChanged: extraOverview ("OverviewRelays.qml", value === 1)
     }
 
+//////// show/hide the OverviewLights page
+    VBusItem {
+        id: showOverviewLights
+        bind: "com.victronenergy.settings/Settings/GuiMods/ShowLightsOverview"
+        onValueChanged: extraOverview ("OverviewLights.qml", value === 1)
+    }
+
 //////// show/hide the Overview Tanks/Temps/Digital Inputs page
     VBusItem {
         id: showOverviewTanksTemps
