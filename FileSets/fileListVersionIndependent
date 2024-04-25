@@ -29,3 +29,6 @@
 /opt/victronenergy/gui/qml/enhancedFormat.js
 /opt/victronenergy/gui/qml/timeToGo.js
 /opt/victronenergy/themes/ccgx/images/overview-renewable-light.svg
+/opt/victronenergy/gui/qml/OverviewLights.qml
+/opt/victronenergy/gui/qml/TileLights.qml
+
