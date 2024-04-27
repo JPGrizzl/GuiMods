@@ -174,6 +174,5 @@ Tile {
     {
         onButton.visible = true 
         offButton.visible = true
-        lightSlider.visible = true 
     }
 }
