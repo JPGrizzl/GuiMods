@@ -43,7 +43,7 @@ MbPage {
         MbSwitch {
             id: lightsOverview
             bind: Utils.path (bindPrefixGuiMods, "/ShowLightsOverview")
-            name: qsTr ("Show Lights overview")
+            name: qsTr ("Show Lights Overview")
             writeAccessLevel: User.AccessUser
         }
         
@@ -52,6 +52,13 @@ MbPage {
             description: qsTr("Light Settings")
             subpage: Component { PageSettingsGuiModsLights {} }
             show: root.showFlowParams
+        }
+
+        MbSwitch {
+            id: nodeRedOverview
+            bind: Utils.path (bindPrefixGuiMods, "/ShowNodeRedIntefaceOverview")
+            name: qsTr ("Show NodeRedInterface Overview")
+            writeAccessLevel: User.AccessUser
         }
 
         MbSwitch {

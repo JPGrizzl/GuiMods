@@ -49,7 +49,7 @@ from vedbus import VeDbusService
 from ve_utils import wrap_dbus_value
 from settingsdevice import SettingsDevice
 
-class Monitor:
+class ServerMonitor:
 
 	def getVeBusObjects (self):
 		vebusService = ""
@@ -423,7 +423,7 @@ def main():
 
 	logging.info (">>>>>>>>>>>>>>>> ExtTransferSwitch starting " + installedVersion + " <<<<<<<<<<<<<<<<")
 
-	Monitor ()
+	ServerMonitor ()
 
 	mainloop = GLib.MainLoop()
 	mainloop.run()
