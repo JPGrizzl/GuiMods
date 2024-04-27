@@ -222,7 +222,7 @@ PageStackWindow {
 
 //////// show/hide the OverviewNodeRed page
     VBusItem {
-        id: showOverviewLights
+        id: showOverviewNodeRed
         bind: "com.victronenergy.settings/Settings/GuiMods/ShowNodeRedInterface"
         onValueChanged: extraOverview ("NodeRedInterface.qml", value === 1)
     }

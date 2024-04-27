@@ -22,7 +22,7 @@
 {"path":"/Settings/GuiMods/ShowLightsOverview", "default":1, "min":0, "max":1}
 {"path":"/Settings/GuiMods/LightsController/1/IpAddress", "default":""}
 {"path":"/Settings/GuiMods/LightsController/2/IpAddress", "default":""}
-{"path":"/Settings/GuiMods/ShowNodeRedInterface", "default":1, "min":0, "max":1}
+{"path":"/Settings/GuiMods/ShowNodeRedInterface", "default":0, "min":0, "max":1}
 {"path":"/Settings/GuiMods/ShowRelayOverview", "default":1, "min":0, "max":1}
 {"path":"/Settings/GuiMods/ShowInactiveFlowTiles", "default":0}
 {"path":"/Settings/GuiMods/ShowTanksTempsDigIn", "default":0, "min":0, "max":1}

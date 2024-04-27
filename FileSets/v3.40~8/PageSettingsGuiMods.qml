@@ -56,7 +56,7 @@ MbPage {
 
         MbSwitch {
             id: nodeRedOverview
-            bind: Utils.path (bindPrefixGuiMods, "/ShowNodeRedIntefaceOverview")
+            bind: Utils.path (bindPrefixGuiMods, "/ShowNodeRedInterface")
             name: qsTr ("Show NodeRedInterface Overview")
             writeAccessLevel: User.AccessUser
         }
