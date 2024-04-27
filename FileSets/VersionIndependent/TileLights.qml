@@ -10,9 +10,16 @@ Tile {
 
     color: "#d9d9d9"
 
-    property int lightIp: (lightNumber === 0 || lightNumber === 1) ? 91 : (lightNumber === 2 || lightNumber === 3) ? 71 : 0
     property int lightApiPath: (lightNumber === 0 || lightNumber === 2) ? 2 : (lightNumber === 1 || lightNumber === 3) ? 3 : 0
     
+    property string guiModsPrefix: "com.victronenergy.settings/Settings/GuiMods"
+    VBusItem { id: lightController1Ip; bind: Utils.path(guiModsPrefix, "/LightsController/1/IpAddress") }
+    property string lightController1IpValue: lightController1Ip.value
+
+    VBusItem { id: lightController2Ip; bind: Utils.path(guiModsPrefix, "/LightsController/2/IpAddress") }
+    property string lightController2IpValue: lightController2Ip.value
+
+    property int lightIp: (lightNumber === 0 || lightNumber === 1) ? lightController1IpValue : (lightNumber === 2 || lightNumber === 3) ? lightController2IpValue : 0
 
 	values: Item
     {
@@ -50,7 +57,7 @@ Tile {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + lightApiPath);
+                    xhr.open("POST", "http://" + lightIp + "/white/" + lightApiPath);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=on&brightness=100");
                 }
@@ -70,7 +77,7 @@ Tile {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + lightApiPath);
+                    xhr.open("POST", "http://" + lightIp + "/white/" + lightApiPath);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=on&brightness=80");
                 }
@@ -90,7 +97,7 @@ Tile {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + lightApiPath);
+                    xhr.open("POST", "http://" + lightIp + "/white/" + lightApiPath);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=on&brightness=40");
                 }
@@ -110,7 +117,7 @@ Tile {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + lightApiPath);
+                    xhr.open("POST", "http://" + lightIp + "/white/" + lightApiPath);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=on&brightness=20");
                 }
@@ -130,7 +137,7 @@ Tile {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + lightApiPath);
+                    xhr.open("POST", "http://" + lightIp + "/white/" + lightApiPath);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=on&brightness=1");
                 }
@@ -150,7 +157,7 @@ Tile {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "http://172.24.24." + lightIp + "/white/" + lightApiPath);
+                    xhr.open("POST", "http://" + lightIp + "/white/" + lightApiPath);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     xhr.send("turn=off");
                 }

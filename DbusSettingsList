@@ -20,6 +20,9 @@
 {"path":"/Settings/GuiMods/ShowTileOverview", "default":1, "min":0, "max":1}
 {"path":"/Settings/GuiMods/MoveSettings", "default":1, "min":0, "max":1}
 {"path":"/Settings/GuiMods/ShowLightsOverview", "default":1, "min":0, "max":1}
+{"path":"/Settings/GuiMods/LightsController/1/IpAddress", "default":""}
+{"path":"/Settings/GuiMods/LightsController/2/IpAddress", "default":""}
+{"path":"/Settings/GuiMods/ShowNodeRedInterface", "default":1, "min":0, "max":1}
 {"path":"/Settings/GuiMods/ShowRelayOverview", "default":1, "min":0, "max":1}
 {"path":"/Settings/GuiMods/ShowInactiveFlowTiles", "default":0}
 {"path":"/Settings/GuiMods/ShowTanksTempsDigIn", "default":0, "min":0, "max":1}
@@ -86,3 +89,6 @@
 {"path":"/Settings/GuiMods/GaugeLimits/MaxMotorDriveLoad", "default":0.0}
 {"path":"/Settings/GuiMods/ReplaceInactiveAcIn", "default":0, "min":0, "max":1}
 {"path":"/Settings/GuiMods/DarkMode", "default":0, "min":0, "max":1}
+{"path":"/Settings/MonitorServer/ServerIp", "default":""}
+{"path":"/Settings/MonitorServer/ServerPort", "default":""}
+{"path":"/Settings/MonitorServer/ServerState", "default":""}

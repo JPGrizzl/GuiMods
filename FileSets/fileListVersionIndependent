@@ -31,4 +31,7 @@
 /opt/victronenergy/themes/ccgx/images/overview-renewable-light.svg
 /opt/victronenergy/gui/qml/OverviewLights.qml
 /opt/victronenergy/gui/qml/TileLights.qml
+/opt/victronenergy/gui/qml/PageSettingsGuiModsLights.qml
+/opt/victronenergy/gui/qml/PageSettingsGuiModsServerMonitoring.qml
+/opt/victronenergy/gui/qml/NodeRedInterface.qml
 

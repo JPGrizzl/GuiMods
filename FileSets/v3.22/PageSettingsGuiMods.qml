@@ -39,6 +39,21 @@ MbPage {
             name: qsTr ("Show Relay overview")
             writeAccessLevel: User.AccessUser
         }
+
+        MbSwitch {
+            id: lightsOverview
+            bind: Utils.path (bindPrefixGuiMods, "/ShowLightsOverview")
+            name: qsTr ("Show Lights overview")
+            writeAccessLevel: User.AccessUser
+        }
+        
+        MbSubMenu
+        {
+            description: qsTr("Light Settings")
+            subpage: Component { PageSettingsGuiModsLights {} }
+            show: root.showFlowParams
+        }
+
         MbSwitch {
             id: tanksTempsOverview
             bind: Utils.path (bindPrefixGuiMods, "/ShowTanksTempsDigIn")

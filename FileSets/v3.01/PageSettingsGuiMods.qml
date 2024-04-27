@@ -47,6 +47,13 @@ MbPage {
             name: qsTr ("Show Lights overview")
             writeAccessLevel: User.AccessUser
         }
+        
+        MbSubMenu
+        {
+            description: qsTr("Light Settings")
+            subpage: Component { PageSettingsGuiModsLights {} }
+            show: root.showFlowParams
+        }
 
         MbSwitch {
             id: tanksTempsOverview
