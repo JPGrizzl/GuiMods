@@ -7,8 +7,6 @@ import "utils.js" as Utils
 OverviewPage {
     id: root
 
-    property VBusItem serverIp: VBusItem { bind: "com.victronenergy.settings/Settings/MonitorServer/ServerIp" }
-    property VBusItem serverPort: VBusItem { bind: "com.victronenergy.settings/Settings/MonitorServer/ServerPort" }
     property VBusItem serverState: VBusItem { bind: "com.victronenergy.settings/Settings/MonitorServer/ServerState" }
 
     // Synchronise name text scroll start
