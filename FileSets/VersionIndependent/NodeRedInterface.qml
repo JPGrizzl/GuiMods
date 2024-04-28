@@ -45,7 +45,7 @@ OverviewPage {
 
     Rectangle {
         width: root.width
-        height: 200
+        height: 60
         color: serverState.value === 'up' ? 'green' : 'red'
         anchors {
             top: parent.top
@@ -64,34 +64,52 @@ OverviewPage {
         Button {
             id: proxmoxOnButton
             text: "Proxmox Server ON"
-            width: 100
-            height: 100
+            width: 120
+            height: 50
             anchors {
             left: parent.left
             top: parent.top
-            topMargin: 10
+            topMargin: 5
+            bottomMargin: 5
             }
             onClicked: {
             var request = new XMLHttpRequest();
-            request.open("GET", "https://192.168.1.120:1881/proxmox/start");
+            request.open("GET", "http://127.0.0.1:1881/proxmox/start");
             request.send();
+            }
+
+            Text {
+                anchors.centerIn: parent
+                text: "Proxmox Server ON"
+                font.pixelSize: 14
+                horizontalAlignment: Text.AlignHCenter
+                color: 'black'
             }
         }
 
         Button {
             id: proxmoxOffButton
             text: "Proxmox Server OFF"
-            width: 100
-            height: 100
+            width: 120
+            height: 50
             anchors {
                 right: parent.right
-                bottom: parent.bottom
-                bottomMargin: 10
+                bottom: parent.top
+                topMargin: 5
+                bottomMargin: 5
             }
             onClicked: {
                 var request = new XMLHttpRequest();
-                request.open("GET", "https://192.168.1.120:1881/proxmox/stop");
+                request.open("GET", "http://127.0.0.1:1881/proxmox/stop");
                 request.send();
+            }
+
+            Text {
+                anchors.centerIn: parent
+                text: "Proxmox Server OFF"
+                font.pixelSize: 14
+                horizontalAlignment: Text.AlignHCenter
+                color: 'black'
             }
         }
     }

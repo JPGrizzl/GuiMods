@@ -29,10 +29,7 @@ class Monitor:
 
 	def background (self):
         try:
-            self.serverIp = self.DbusSettings['monitorServerIp']
-            self.serverPort = self.DbusSettings['monitorServerPort']
-            endpoint = '/proxmox/status'
-            response = requests.get('https://' + self.serverIp + ':' + self.serverPort + endpoint)
+            response = requests.get('http://127.0.0.1:1880/proxmox/status')
 
             if response.status_code != 200:
                 self.serverState = 'down'
@@ -41,12 +38,12 @@ class Monitor:
 
             body = json.loads(response.text)
 
-            if 'result' in body:
-                self.serverState = 'down'
-                self.DbusSettings['monitorServerState'] = 'down'
-            else:
+            if 'success' in body:
                 self.serverState = 'up'
                 self.DbusSettings['monitorServerState'] = 'up'
+            else:
+                self.serverState = 'down'
+                self.DbusSettings['monitorServerState'] = 'down'
         except Exception as e:
             logging.error(f"Error in background method: {e}")
         return 
@@ -55,14 +52,10 @@ class Monitor:
 	def __init__(self):
 
 		self.theBus = dbus.SystemBus()
-        self.serverIp = ""
-        self.serverPort = ""
         self.serverState = ""
 
 		# create / attach local settings
 		settingsList = {
-			'monitorServerIp': [ '/Settings/MonitorServer/ServerIp', "" ],
-            'monitorServerPort': [ '/Settings/MonitorServer/ServerPort', "" ],
             'monitorServerState': [ '/Settings/MonitorServer/ServerState', "" ],
 			}
 		self.DbusSettings = SettingsDevice(bus=self.theBus, supportedSettings=settingsList,
