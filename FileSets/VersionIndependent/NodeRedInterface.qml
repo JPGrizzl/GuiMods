@@ -64,6 +64,8 @@ OverviewPage {
         Button {
             id: proxmoxOnButton
             text: "Proxmox Server ON"
+            width: 100
+            height: 100
             anchors {
             left: parent.left
             top: parent.top
@@ -79,6 +81,8 @@ OverviewPage {
         Button {
             id: proxmoxOffButton
             text: "Proxmox Server OFF"
+            width: 100
+            height: 100
             anchors {
                 right: parent.right
                 bottom: parent.bottom

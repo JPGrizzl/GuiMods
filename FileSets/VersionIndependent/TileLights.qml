@@ -19,7 +19,7 @@ Tile {
     VBusItem { id: lightController2Ip; bind: Utils.path(guiModsPrefix, "/LightsController/2/IpAddress") }
     property string lightController2IpValue: lightController2Ip.value
 
-    property int lightIp: (lightNumber === 0 || lightNumber === 1) ? lightController1IpValue : (lightNumber === 2 || lightNumber === 3) ? lightController2IpValue : 0
+    property string lightIp: (lightNumber === 0 || lightNumber === 1) ? lightController1IpValue : (lightNumber === 2 || lightNumber === 3) ? lightController2IpValue : 0
 
 	values: Item
     {
