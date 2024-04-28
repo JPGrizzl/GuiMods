@@ -55,7 +55,7 @@ OverviewPage {
 
         Text {
             anchors.centerIn: parent
-            text: serverState.value === 'up' ? 'Proxmox Server Status: Up' : 'Proxmox Server Status: Down'
+            text: serverState.value === 'up' ? 'Proxmox Server Running' : 'Proxmox Server Offline'
             font.pixelSize: 14
             horizontalAlignment: Text.AlignHCenter
             color: 'black'
@@ -63,7 +63,7 @@ OverviewPage {
 
         Button {
             id: proxmoxOnButton
-            text: "Proxmox Server ON"
+            text: "SWITCH ON"
             width: 120
             height: 50
             anchors {
@@ -74,13 +74,17 @@ OverviewPage {
             }
             onClicked: {
             var request = new XMLHttpRequest();
-            request.open("GET", "http://127.0.0.1:1881/proxmox/start");
+            request.open("GET", "http://127.0.0.1:1880/proxmox/start");
             request.send();
+            }
+
+            background: Rectangle {
+                color: proxmoxOffButton.pressed ? "white" : "lightgray"
             }
 
             Text {
                 anchors.centerIn: parent
-                text: "Proxmox Server ON"
+                text: "SWITCH ON"
                 font.pixelSize: 14
                 horizontalAlignment: Text.AlignHCenter
                 color: 'black'
@@ -89,27 +93,31 @@ OverviewPage {
 
         Button {
             id: proxmoxOffButton
-            text: "Proxmox Server OFF"
+            text: "SHUTDOWN"
             width: 120
             height: 50
             anchors {
                 right: parent.right
-                bottom: parent.top
+                top: parent.top
                 topMargin: 5
                 bottomMargin: 5
             }
             onClicked: {
                 var request = new XMLHttpRequest();
-                request.open("GET", "http://127.0.0.1:1881/proxmox/stop");
+                request.open("GET", "http://127.0.0.1:1880/proxmox/stop");
                 request.send();
+            }
+
+            background: Rectangle {
+                color: proxmoxOffButton.pressed ? "white" : "lightgray"
             }
 
             Text {
                 anchors.centerIn: parent
-                text: "Proxmox Server OFF"
+                text: "SHUTDOWN"
                 font.pixelSize: 14
                 horizontalAlignment: Text.AlignHCenter
-                color: 'black'
+                color: proxmoxOffButton.pressed ? "gray" : "black"
             }
         }
     }

@@ -32,6 +32,7 @@ class Monitor:
             response = requests.get('http://127.0.0.1:1880/proxmox/status')
 
             if response.status_code != 200:
+				logging.error(f"Error in background method: {response.status_code}")
                 self.serverState = 'down'
                 self.DbusSettings['monitorServerState'] = 'down'
                 return
