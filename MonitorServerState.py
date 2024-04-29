@@ -25,7 +25,7 @@ from vedbus import VeDbusService
 from ve_utils import wrap_dbus_value
 from settingsdevice import SettingsDevice
 
-class Monitor:
+class ServerMonitor:
 
 	def background (self):
         try:
@@ -94,7 +94,7 @@ def main():
 
 	logging.info (">>>>>>>>>>>>>>>> MonitorServerState starting " + installedVersion + " <<<<<<<<<<<<<<<<")
 
-	Monitor ()
+	ServerMonitor()
 
 	mainloop = GLib.MainLoop()
 	mainloop.run()

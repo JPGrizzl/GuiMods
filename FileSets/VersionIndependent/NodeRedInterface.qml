@@ -68,16 +68,11 @@ OverviewPage {
             left: parent.left
             top: parent.top
             topMargin: 5
-            bottomMargin: 5
             }
             onClicked: {
             var request = new XMLHttpRequest();
             request.open("GET", "http://127.0.0.1:1880/proxmox/start");
             request.send();
-            }
-
-            background: Rectangle {
-                color: proxmoxOffButton.pressed ? "white" : "lightgray"
             }
 
             Text {
@@ -98,7 +93,6 @@ OverviewPage {
                 right: parent.right
                 top: parent.top
                 topMargin: 5
-                bottomMargin: 5
             }
             onClicked: {
                 var request = new XMLHttpRequest();
@@ -106,16 +100,12 @@ OverviewPage {
                 request.send();
             }
 
-            background: Rectangle {
-                color: proxmoxOffButton.pressed ? "white" : "lightgray"
-            }
-
             Text {
                 anchors.centerIn: parent
                 text: "SHUTDOWN"
                 font.pixelSize: 14
                 horizontalAlignment: Text.AlignHCenter
-                color: proxmoxOffButton.pressed ? "gray" : "black"
+                color: "black"
             }
         }
     }
