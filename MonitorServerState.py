@@ -57,7 +57,7 @@ class ServerMonitor:
 
         # create / attach local settings
         settingsList = {
-            "monitorServerState": ["/Settings/MonitorServe/ServerState", ""],
+            "monitorServerState": ["/Settings/MonitorServe/ServerState", 0,0,0],
         }
         self.DbusSettings = SettingsDevice(
             bus=self.theBus,
