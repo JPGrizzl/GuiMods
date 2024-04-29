@@ -35,17 +35,17 @@ class ServerMonitor:
             if response.status_code != 200:
                 logging.error(f"Error in background method: {response.status_code}")
                 self.serverState = 0
-                self.DbusSettings["monitorServerState"] = 0
+                self.DbusSettings["monitorServerState"] = (wrap_dbus_value (0))
                 return
 
             body = json.loads(response.text)
 
             if "success" in body:
                 self.serverState = 1
-                self.DbusSettings["monitorServerState"] = 1
+                self.DbusSettings["monitorServerState"] = (wrap_dbus_value (1))
             else:
                 self.serverState = 0
-                self.DbusSettings["monitorServerState"] = 0
+                self.DbusSettings["monitorServerState"] = (wrap_dbus_value (0))
         except Exception as e:
             logging.error(f"Error in background method: {e}")
         return
@@ -57,7 +57,7 @@ class ServerMonitor:
 
         # create / attach local settings
         settingsList = {
-            "monitorServerState": ["/Settings/MonitorServe/ServerState", 0,0,0],
+            "monitorServerState": ["/Settings/MonitorServe/ServerState", 0,1,0],
         }
 		
         self.DbusSettings = SettingsDevice(
