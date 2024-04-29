@@ -34,18 +34,18 @@ class ServerMonitor:
             response = requests.get("http://127.0.0.1:1880/proxmox/status")
             if response.status_code != 200:
                 logging.error(f"Error in background method: {response.status_code}")
-                self.serverState = "down"
-                self.DbusSettings["monitorServerState"] = "down"
+                self.serverState = 0
+                self.DbusSettings["monitorServerState"] = 0
                 return
 
             body = json.loads(response.text)
 
             if "success" in body:
-                self.serverState = "up"
-                self.DbusSettings["monitorServerState"] = "up"
+                self.serverState = 1
+                self.DbusSettings["monitorServerState"] = 1
             else:
-                self.serverState = "down"
-                self.DbusSettings["monitorServerState"] = "down"
+                self.serverState = 0
+                self.DbusSettings["monitorServerState"] = 0
         except Exception as e:
             logging.error(f"Error in background method: {e}")
         return
@@ -59,6 +59,7 @@ class ServerMonitor:
         settingsList = {
             "monitorServerState": ["/Settings/MonitorServe/ServerState", 0,0,0],
         }
+		
         self.DbusSettings = SettingsDevice(
             bus=self.theBus,
             supportedSettings=settingsList,

@@ -44,7 +44,7 @@ OverviewPage {
     Rectangle {
         width: root.width
         height: 60
-        color: serverState.value === 'up' ? 'green' : 'red'
+        color: serverState.value === 1 ? 'green' : 'red'
         anchors {
             top: parent.top
             topMargin: 7
@@ -53,7 +53,7 @@ OverviewPage {
 
         Text {
             anchors.centerIn: parent
-            text: serverState.value === 'up' ? 'Proxmox Server Running' : 'Proxmox Server Offline'
+            text: serverState.value === 1 ? 'Proxmox Server Running' : 'Proxmox Server Offline'
             font.pixelSize: 14
             horizontalAlignment: Text.AlignHCenter
             color: 'black'
